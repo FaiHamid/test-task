@@ -1,0 +1,38 @@
+{
+  "name": "test-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "14.21.3"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.13.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "graphql": "^16.9.0",
+    "graphql-tools": "^9.0.1",
+    "nodemon": "^3.1.4",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "globals": "^15.8.0",
+    "typescript-eslint": "^7.16.1"
+  }
+}

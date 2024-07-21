@@ -1,0 +1,20 @@
+{
+  "development": {
+    "username": "ua952kdg82027q",
+    "password": "p3079af17a7ac6012721f93c5279757e34db7f30704a1501d3a7d9710b8c20a4f",
+    "database": "d6pf58bdhp9p7c",
+    "host": "c3l5o0rb2a6o4l.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "ua952kdg82027q",
+    "password": "p3079af17a7ac6012721f93c5279757e34db7f30704a1501d3a7d9710b8c20a4f",
+    "database": "d6pf58bdhp9p7c",
+    "host": "c3l5o0rb2a6o4l.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres"
+  }
+}
