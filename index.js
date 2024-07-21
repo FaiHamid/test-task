@@ -11,36 +11,31 @@ const schema = makeExecutableSchema({
   resolvers,
 });
 
-const corsOptions ={
-  origin:'*', 
-  credentials:true,
-  optionSuccessStatus:200,
+const corsOptions = {
+  origin: '*',
+  credentials: true,
+  optionSuccessStatus: 200,
 }
-
 
 const server = new ApolloServer({ schema });
 
-const app = express();
+const startServer = async () => {
+  await server.start();
 
-app.use(cors(corsOptions)) 
+  const app = express();
 
-app.use(bodyParser.json());
-console.log('path',server.graphqlPath);
-// server.start().then(() => {
-//   server.applyMiddleware({ app, path: '/graphql' });
+  app.use(cors(corsOptions));
+  app.use(bodyParser.json());
 
-//   app.listen(8080, () => {
-//     console.log(`🚀 Server ready at http://localhost:8080${server.graphqlPath}`);
-//   });
-// }).catch(error => {
-//   console.error('Error starting server:', error);
-// });;
+  server.applyMiddleware({ app, path: '/graphql' });
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000;
-}
+  let port = process.env.PORT;
+  if (port == null || port == "") {
+    port = 8080;
+  }
+  app.listen(port, () => {
+    console.log(`🚀 Server ready at https://test-task.herokuapp.com${server.graphqlPath}`);
+  });
+};
 
-app.listen(port, () => {
-  console.log(`🚀 Server ready at https://test-task.herokuapp.com${server.graphqlPath}`);
-});
+startServer();
