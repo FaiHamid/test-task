@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js"
+    "start": "nodemon --exec babel-node index.js",
+    "dev": "nodemon",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/index.js"
   },
   "keywords": [],
   "author": "",
@@ -21,11 +24,11 @@
     "express": "^4.19.2",
     "graphql": "^16.9.0",
     "graphql-tools": "^9.0.1",
-    "nodemon": "^3.1.4",
     "sequelize": "^6.37.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.7.0",
+    "@types/node": "^20.14.11",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.25.3",
@@ -33,6 +36,10 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "globals": "^15.8.0",
+    "nodemon": "^3.1.4",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3",
     "typescript-eslint": "^7.16.1"
   }
 }
